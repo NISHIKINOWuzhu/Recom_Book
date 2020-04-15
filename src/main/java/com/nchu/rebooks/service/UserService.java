@@ -4,7 +4,7 @@ import com.nchu.rebooks.model.User;
 
 import java.util.Collection;
 
-public interface SystemService {
+public interface UserService {
     public Collection<User> getAllUsers();
     public Collection<User> findUsersByName(String name);
     public User addUser(User user);

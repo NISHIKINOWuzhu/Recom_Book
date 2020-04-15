@@ -1,4 +1,3 @@
-
 INSERT INTO `course` VALUES (null, '程序设计基础',null);
 INSERT INTO `course` VALUES (null, '高等数学',null);
 INSERT INTO `course` VALUES (null, '线性代数',null);

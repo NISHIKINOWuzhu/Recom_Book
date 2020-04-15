@@ -1,7 +1,7 @@
 package com.nchu.rebooks.rest;
 
 import com.nchu.rebooks.model.User;
-import com.nchu.rebooks.service.SystemService;
+import com.nchu.rebooks.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,22 +17,22 @@ import java.util.Collection;
 public class UserRestController {
 
     @Autowired
-    SystemService systemService;
+    UserService userService;
 
     @RequestMapping(value = "",method = RequestMethod.GET,produces = "application/json")
     public ResponseEntity<Collection<User>> users(String name){
         Collection<User> users;
         if (name == null){
-            users = systemService.getAllUsers();
+            users = userService.getAllUsers();
         } else {
-            users = systemService.findUsersByName(name);
+            users = userService.findUsersByName(name);
         }
         return new ResponseEntity<Collection<User>>(users, HttpStatus.OK);
     }
 
     @RequestMapping(value = "",method = RequestMethod.POST,produces = "application/json")
     public ResponseEntity<User> usersAdd(@RequestBody User user){
-        systemService.addUser(user);
+        userService.addUser(user);
 //        systemService.insertUser(user);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 import java.util.Collection;
 
 @Service
-public class SystemServiceImpl implements SystemService {
+public class UserServiceImpl implements UserService {
 
     @Autowired
     UsersRepository userRepo;
 
     @Autowired
-    public SystemServiceImpl(UsersRepository userRepo) {
+    public UserServiceImpl(UsersRepository userRepo) {
         this.userRepo = userRepo;
     }
 
