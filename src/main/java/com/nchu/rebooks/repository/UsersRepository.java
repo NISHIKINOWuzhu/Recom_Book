@@ -11,7 +11,7 @@ import java.util.Collection;
 
 @Repository
 public interface UsersRepository extends CrudRepository<User,Integer> {
-    @Query("select * from users where name like :condition")
+    @Query("select * from user where name like :condition")
     Collection<User> findByName(@Param("condition") String name);
 
 //    @Modifying

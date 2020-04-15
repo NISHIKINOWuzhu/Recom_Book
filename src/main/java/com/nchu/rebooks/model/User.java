@@ -2,7 +2,7 @@ package com.nchu.rebooks.model;
 
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table("users")
+@Table("user")
 public class User extends BaseNamed{
 
     private String pwd;

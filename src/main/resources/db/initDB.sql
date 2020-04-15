@@ -67,8 +67,8 @@
 --             on update cascade on delete cascade
 -- );
 
-DROP TABLE IF EXISTS users;
-CREATE TABLE users
+DROP TABLE IF EXISTS user;
+CREATE TABLE user
 (
     id        int primary key auto_increment,
     name      char(14) NOT NULL unique,
@@ -77,6 +77,51 @@ CREATE TABLE users
     email     char(32) NULL,
     tel       char(16) NULL
 );
+
+DROP TABLE IF EXISTS book;
+CREATE TABLE book
+(
+    id        int PRIMARY KEY AUTO_INCREMENT,
+    name      varchar(16)                               NULL,
+    publish   varchar(16)                               NULL,
+    isbn      char(17)                                  NULL,
+    writer    varchar(16)                               NULL,
+    local_url varchar(64)                               NULL,
+    price     float                                     NULL,
+    type      char(32)                                  NULL,
+    upper     char(6)                                   NULL,
+    viewed    int                                       NULL,
+    cover     varchar(256) DEFAULT 'images/default.png' NULL,
+    status    int          DEFAULT 0
+);
+
+
+DROP TABLE IF EXISTS school;
+CREATE TABLE school
+(
+    id      int AUTO_INCREMENT PRIMARY KEY,
+    name    varchar(32)  NOT NULL,
+    address varchar(64)  NULL,
+    tel     char(20)     NULL,
+    info    varchar(140) NULL
+);
+
+DROP TABLE IF EXISTS course;
+CREATE TABLE course
+(
+    id   int AUTO_INCREMENT PRIMARY KEY,
+    name varchar(48)  NOT NULL,
+    info varchar(140) NULL
+);
+
+DROP TABLE IF EXISTS major;
+CREATE TABLE major
+(
+    id   int AUTO_INCREMENT PRIMARY KEY,
+    name varchar(32) NOT NULL,
+    info varchar(140) null
+);
+
 
 
 
