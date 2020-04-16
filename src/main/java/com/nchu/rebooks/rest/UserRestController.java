@@ -5,10 +5,7 @@ import com.nchu.rebooks.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
@@ -36,5 +33,19 @@ public class UserRestController {
 //        systemService.insertUser(user);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
+
+    @RequestMapping(value = "/del",method = RequestMethod.DELETE,produces = "application/json")
+    public ResponseEntity<User> delUser(@RequestParam int id){
+        userService.delUser(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/update",method = RequestMethod.PUT,produces = "application/json")
+    public ResponseEntity<User> updateUser(@RequestBody User user){
+        userService.update(user);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+
 
 }

@@ -29,9 +29,9 @@ public class BookRestController {
     }
 
     @RequestMapping(value = "",method = RequestMethod.POST,produces = "application/json")
-    public ResponseEntity<Collection<Book>> bookAdd(@RequestBody Book book){
+    public ResponseEntity<Book> bookAdd(@RequestBody Book book){
         bookService.addBook(book);
-        return new ResponseEntity<Collection<Book>>(HttpStatus.ACCEPTED);
+        return new ResponseEntity<Book>(HttpStatus.ACCEPTED);
     }
 
     @RequestMapping(value = "/del",method = RequestMethod.DELETE)

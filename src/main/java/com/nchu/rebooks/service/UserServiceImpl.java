@@ -33,6 +33,21 @@ public class UserServiceImpl implements UserService {
         return userRepo.save(user);
     }
 
+    @Override
+    public void delUser(int id) {
+        if (userRepo.existsById(id)){
+            userRepo.deleteById(id);
+        }
+    }
+
+    @Override
+    public void update(User user) {
+        if (userRepo.existsById(user.getId())){
+            userRepo.updateUser(user.getName(),user.getPwd(),
+                    user.getSex(),user.getEmail(),user.getTel(),user.getId());
+        }
+    }
+
 //    @Override
 //    public boolean insertUser(User user) {
 //        return userRepo.insertUser(user.getId(),user.getName(),

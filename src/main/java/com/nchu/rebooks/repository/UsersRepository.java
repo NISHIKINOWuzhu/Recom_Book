@@ -14,6 +14,12 @@ public interface UsersRepository extends CrudRepository<User,Integer> {
     @Query("select * from user where name like :condition")
     Collection<User> findByName(@Param("condition") String name);
 
+    @Modifying
+    @Query("update user set name=:name,pwd=:pwd, sex=:sex, email=:email, tel=:tel where id=:id")
+    boolean updateUser(@Param("name") String name,@Param("pwd") String pwd,
+                       @Param("sex") String sex,@Param("email") String email,@Param("tel") String tel,
+                       @Param("id") int id);
+
 //    @Modifying
 //    @Query("insert into users values (:id,:name,:nick_name,:pwd,:sex,:email,:tel1)")
 //    boolean insertUser(@Param("id") String id,@Param("name") String name,
