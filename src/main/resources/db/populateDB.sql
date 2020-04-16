@@ -92,3 +92,11 @@ INSERT INTO `user` VALUES (null, 'wuzhu', '123123' , 'Woman', '2927962422@qq.com
 
 INSERT INTO `book` VALUES (null, 'Android移动应用开发教程', '清华大学出版社', '978-7-302-49105-7', '祝永志', '', 49, 'TJ', 'Admin', 0, 'images/default.png',0);
 INSERT INTO `book` VALUES (null, '软件测试方法和技术', '清华大学出版社', '978-7-302-37031-4', '朱少民', '', 44.5, 'TJ', 'Admin', 0, 'images/20191231170610.png',0);
+INSERT INTO `book` VALUES (null, 'qwe', '清华大学出版社', '978-7-302-37031-4', '朱少民', '', 44.5, 'TJ', 'Admin', 0, 'images/20191231170610.png',0);
+INSERT INTO `book` VALUES (null, 'asd', '清华大学出版社', '978-7-302-37031-4', '朱少民', '', 44.5, 'TJ', 'Admin', 0, 'images/20191231170610.png',0);
+INSERT INTO `book` VALUES (null, 'zxc', '清华大学出版社', '978-7-302-37031-4', '朱少民', '', 44.5, 'TJ', 'Admin', 0, 'images/20191231170610.png',0);
+INSERT INTO `book` VALUES (null, 'rty', '清华大学出版社', '978-7-302-37031-4', '朱少民', '', 44.5, 'TJ', 'Admin', 0, 'images/20191231170610.png',0);
+INSERT INTO `book` VALUES (null, 'fgh', '清华大学出版社', '978-7-302-37031-4', '朱少民', '', 44.5, 'TJ', 'Admin', 0, 'images/20191231170610.png',0);
+INSERT INTO `book` VALUES (null, 'vbn', '清华大学出版社', '978-7-302-37031-4', '朱少民', '', 44.5, 'TJ', 'Admin', 0, 'images/20191231170610.png',0);
+INSERT INTO `book` VALUES (null, 'uio', '清华大学出版社', '978-7-302-37031-4', '朱少民', '', 44.5, 'TJ', 'Admin', 0, 'images/20191231170610.png',0);
+INSERT INTO `book` VALUES (null, 'jkl', '清华大学出版社', '978-7-302-37031-4', '朱少民', '', 44.5, 'TJ', 'Admin', 0, 'images/20191231170610.png',0);

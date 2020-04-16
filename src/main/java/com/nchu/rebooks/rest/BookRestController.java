@@ -11,6 +11,7 @@ import java.util.Collection;
 
 @RestController
 @RequestMapping("/api/v1/books")
+@CrossOrigin
 public class BookRestController {
 
     @Autowired
@@ -31,5 +32,17 @@ public class BookRestController {
     public ResponseEntity<Collection<Book>> bookAdd(@RequestBody Book book){
         bookService.addBook(book);
         return new ResponseEntity<Collection<Book>>(HttpStatus.ACCEPTED);
+    }
+
+    @RequestMapping(value = "/del",method = RequestMethod.DELETE)
+    public ResponseEntity<Collection<Book>> bookDel(@RequestParam("id") int id){
+        bookService.delBook(id);
+        return new ResponseEntity<Collection<Book>>(HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/update",method = RequestMethod.PUT)
+    public ResponseEntity<Collection<Book>> bookEdit(@RequestBody Book book){
+        bookService.updateBook(book);
+        return new ResponseEntity<Collection<Book>>(HttpStatus.OK);
     }
 }

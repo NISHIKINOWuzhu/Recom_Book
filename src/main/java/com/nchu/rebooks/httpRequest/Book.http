@@ -17,7 +17,34 @@ Content-Type: application/json
 }
 
 ###
-GET https://localhost:8080/api/v1/books/
+GET https://localhost:8080/api/v1/books
 Accept: application/json
+
+###
+DELETE https://localhost:8080/api/v1/books/del
+Content-Type: application/json
+
+{
+  "id": "1"
+}
+
+###
+PUT https://localhost:8080/api/v1/books/update
+Content-Type: application/json
+
+{
+  "id": 10,
+  "name": "name123",
+  "publish": "publish12343",
+  "isbn": "x-x-x-x-x",
+  "writer": "writer0987",
+  "local_url": "",
+  "price": 114514.1919,
+  "type": "TJ",
+  "upper": "Admin421",
+  "viewed": 0,
+  "cover": "images/lucky.png",
+  "status": "0"
+}
 
 ###

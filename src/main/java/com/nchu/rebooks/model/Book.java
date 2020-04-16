@@ -14,7 +14,7 @@ public class Book extends BaseNamed{
     private String upper;
     private int viewed;
     private String cover;
-    private String status;
+    private int status;
 
     public String getPublish() {
         return publish;
@@ -88,11 +88,11 @@ public class Book extends BaseNamed{
         this.cover = cover;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 }
