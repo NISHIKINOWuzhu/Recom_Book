@@ -34,7 +34,7 @@ public class BookRestController {
         return new ResponseEntity<Book>(HttpStatus.ACCEPTED);
     }
 
-    @RequestMapping(value = "/del",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete",method = RequestMethod.DELETE)
     public ResponseEntity<Collection<Book>> bookDel(@RequestParam("id") int id){
         bookService.delBook(id);
         return new ResponseEntity<Collection<Book>>(HttpStatus.OK);

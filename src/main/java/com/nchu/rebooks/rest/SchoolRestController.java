@@ -33,7 +33,7 @@ public class SchoolRestController {
         return new ResponseEntity<School>(HttpStatus.ACCEPTED);
     }
 
-    @RequestMapping(value = "/del",method = RequestMethod.DELETE,produces = "application/json")
+    @RequestMapping(value = "/delete",method = RequestMethod.DELETE,produces = "application/json")
     public ResponseEntity<School> delSchool(@RequestParam int id){
         schoolService.delSchool(id);
         return new ResponseEntity<School>(HttpStatus.OK);

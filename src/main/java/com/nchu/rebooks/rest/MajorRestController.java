@@ -1,7 +1,7 @@
 package com.nchu.rebooks.rest;
 
-import com.nchu.rebooks.model.User;
-import com.nchu.rebooks.service.UserService;
+import com.nchu.rebooks.model.Major;
+import com.nchu.rebooks.service.MajorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,42 +10,38 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("/api/v1/users")
-public class UserRestController {
+@RequestMapping("/api/v1/majors")
+public class MajorRestController {
 
     @Autowired
-    UserService userService;
+    MajorService majorService;
 
     @RequestMapping(value = "",method = RequestMethod.GET,produces = "application/json")
-    public ResponseEntity<Collection<User>> users(String name){
-        Collection<User> users;
+    public ResponseEntity<Collection<Major>> majors(String name){
+        Collection<Major> majors;
         if (name == null){
-            users = userService.getAllUsers();
+            majors = majorService.getAllMajors();
         } else {
-            users = userService.findUsersByName(name);
+            majors = majorService.findMajorByName(name);
         }
-        return new ResponseEntity<Collection<User>>(users, HttpStatus.OK);
+        return new ResponseEntity<>(majors, HttpStatus.OK);
     }
 
     @RequestMapping(value = "",method = RequestMethod.POST,produces = "application/json")
-    public ResponseEntity<User> usersAdd(@RequestBody User user){
-        userService.addUser(user);
-//        systemService.insertUser(user);
-        return new ResponseEntity<>(HttpStatus.CREATED);
+    public ResponseEntity<Major> addMajor(@RequestBody Major major){
+        majorService.addMajor(major);
+        return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
     @RequestMapping(value = "/delete",method = RequestMethod.DELETE,produces = "application/json")
-    public ResponseEntity<User> delUser(@RequestParam int id){
-        userService.delUser(id);
+    public ResponseEntity<Major> delMajor(@RequestParam int id){
+        majorService.deleteMajor(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @RequestMapping(value = "/update",method = RequestMethod.PUT,produces = "application/json")
-    public ResponseEntity<User> updateUser(@RequestBody User user){
-        userService.update(user);
+    public ResponseEntity<Major> updateMajor(@RequestBody Major major){
+        majorService.updateMajor(major);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
-
-
 }
